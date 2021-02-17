@@ -23,11 +23,11 @@ public class BasicCalculator {
     }
 
     public long div(Long number1, Long number2) {
-        if (number2 == 0) {
-            logger.info( "Invalid operation");
+        try {
+            logger.info( "Dividing {} - {}", number1, number2);
+            return number1 / number2;
+        } catch (ArithmeticException ex) {
             return 0;
         }
-        logger.info( "Dividing {} - {}", number1, number2);
-        return number1 / number2;
     }
 }
